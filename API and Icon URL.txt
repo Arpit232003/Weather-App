@@ -1,0 +1,4 @@
+API = https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=ea0b1f60f7700b12fffddbcbcfe21f1e&units=metric"
+
+
+ICON = https://www.iconfinder.com/icons/255380/clear_weather_night_icon

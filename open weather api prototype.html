@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather open weather api | WEB |</title>
+</head>
+
+<body>
+    <script>
+        function getimage() {
+            let searchCity = document.getElementById("city").value;
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=ea0b1f60f7700b12fffddbcbcfe21f1e&units=metric`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    document.getElementById("imageis").innerHTML = `<img src="weather icons/${data.weather[0].icon}.png" width="200" height="200"><br><p>${data.weather[0].main}<br>${data.weather[0].description}</p>`;
+                })
+                .catch(() => alert("Invalid City!!"))
+        }
+    </script>
+    <input type="text" id="city" placeholder="Enter City">
+    <button onclick="getimage()">click me </button>
+    <div id="imageis">
+        <img src="">
+        <p></p>
+    </div>
+</body>
+
+</html>
